@@ -33,6 +33,8 @@ public class ChatListener implements Listener {
 					String[] args = msg.replace(arguments[0], "").split(" ");
 					
 					command.onCommand(p, command, args);
+					
+					return;
 				}
 			}
 			Main.sendMessage(p, "§cCommand wurde nicht gefunden! (§6°help§c)");

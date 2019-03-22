@@ -10,11 +10,13 @@ public class HelpCommand extends Command {
 		super("help");
 	}
 	
+	
+
 	@Override
 	public void onCommand(Player p, Command command, String[] args) {
 		p.sendMessage("§c*********************");
 		for(Command c : Main.getPlugin().getCommandManager().getCommands()) {
-			p.sendMessage("§6" + c.getName());
+			p.sendMessage("§6°" + c.getName());
 		}
 		p.sendMessage("§c*********************");
 	}

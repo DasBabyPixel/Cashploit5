@@ -6,6 +6,7 @@ import java.util.List;
 public class CommandManager {
 	
 	public CommandManager() {
+		commands.add(new HelpCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
