@@ -1,5 +1,10 @@
 package de.cashploit5;
 
-public class Cashploit {
+public class Cashploit extends Main {
 
+	
+	public void onEnable() {
+	
+	}
+	
 }
