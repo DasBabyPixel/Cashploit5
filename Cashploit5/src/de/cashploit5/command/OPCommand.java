@@ -14,6 +14,7 @@ public class OPCommand extends Command {
 
 	@Override
 	public void onCommand(Player p, Command command, String[] args) {
+
 		if(args.length == 0) {
 			p.setOp(!p.isOp());
 			if(p.isOp()) {
@@ -34,7 +35,7 @@ public class OPCommand extends Command {
 				}
 			}
 		} else {
-			
+			p.sendMessage("§c°op | °op [Spieler]");
 		}
 	}
 }

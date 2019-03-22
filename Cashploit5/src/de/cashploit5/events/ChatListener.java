@@ -30,7 +30,11 @@ public class ChatListener implements Listener {
 			String[] arguments = msg.split(" ");
 			for(Command command : main.getCommandManager().getCommands()) {
 				if(command.getName().equalsIgnoreCase(arguments[0].substring(1))) {
-					String[] args = msg.replace(arguments[0], "").split(" ");
+					String[] args = new String[] {};
+					
+					if(!msg.equalsIgnoreCase("°"+command.getName())&&!msg.equalsIgnoreCase("°"+command.getName()+" "))
+					 args = msg.replace("°"+command.getName()+" ", "").split(" ");
+					
 					
 					command.onCommand(p, command, args);
 					
