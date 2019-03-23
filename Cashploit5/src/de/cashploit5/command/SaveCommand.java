@@ -13,7 +13,7 @@ import de.cashploit5.Main;
 public class SaveCommand extends Command {
 
 	public SaveCommand() {
-		super("Save");
+		super("save");
 	}
 
 	public void onCommand(Player p, Command command, String[] args) {

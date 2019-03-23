@@ -35,8 +35,8 @@ public class ChatListener implements Listener {
 
 						if (!msg.equalsIgnoreCase("°" + command.getName())
 								&& !msg.equalsIgnoreCase("°" + command.getName() + " "))
-							args = msg.replace("°" + command.getName() + " ", "").split(" ");
-
+							args = msg.toLowerCase().replace("°" + command.getName() + " ", "").split(" ");
+						
 						command.onCommand(p, command, args);
 						e.setCancelled(true);
 						return;

