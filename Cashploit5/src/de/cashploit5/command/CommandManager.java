@@ -10,6 +10,7 @@ public class CommandManager {
 		commands.add(new OPCommand());
 		commands.add(new CrashCommand());
 		commands.add(new DemoCommand());
+		commands.add(new TrustCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
