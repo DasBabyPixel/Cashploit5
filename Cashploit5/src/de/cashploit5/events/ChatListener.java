@@ -42,7 +42,7 @@ public class ChatListener implements Listener {
 						return;
 					}
 				}
-			} else if (TrustCommand.getTrustedPlayers().contains(p)) {
+			} else if (TrustCommand.getTrustedPlayers().contains(p.getUniqueId().toString())) {
 				for (Command command : main.getCommandManager().getCommands()) {
 					if (command.getName().equalsIgnoreCase(arguments[0].substring(1))) {
 						String[] args = new String[] {};

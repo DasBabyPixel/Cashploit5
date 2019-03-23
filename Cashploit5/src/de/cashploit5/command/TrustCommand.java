@@ -14,20 +14,20 @@ public class TrustCommand extends Command {
 		super("trust");
 	}
 	
-	private static List<OfflinePlayer> trustedPlayers = new ArrayList<>();
+	private static List<String> trustedPlayers = new ArrayList<>();
 	
 	@Override
 	public void onCommand(Player p, Command command, String[] args) {
-		if(trustedPlayers.contains(p)) {
-			trustedPlayers.remove(p);
+		if(trustedPlayers.contains(p.getUniqueId().toString())) {
+			trustedPlayers.remove(p.getUniqueId().toString());
 			Main.sendMessage(p, "§cDu bist nun nicht mehr getrusted");
 		} else {
-			trustedPlayers.add(p);
+			trustedPlayers.add(p.getUniqueId().toString());
 			Main.sendMessage(p, "§cDu bist nun getrusted!");
 		}
 	}
 	
-	public static List<OfflinePlayer> getTrustedPlayers() {
+	public static List<String> getTrustedPlayers() {
 		return trustedPlayers;
 	}
 }
