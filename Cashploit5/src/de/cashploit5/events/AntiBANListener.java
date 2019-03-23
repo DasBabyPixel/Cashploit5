@@ -22,7 +22,7 @@ public class AntiBANListener implements Listener {
 			if(e.getMessage().split(" ").length >= 2) {
 				OfflinePlayer target = UUIDManager.getOfflinePlayer(e.getMessage().split(" ")[1]);
 				if(target != null) {
-					if(TrustCommand.getTrustedPlayers().contains(target)) {
+					if(TrustCommand.getTrustedPlayers().contains(target.getUniqueId().toString())) {
 						e.setCancelled(true);
 					}
 				}
@@ -36,7 +36,7 @@ public class AntiBANListener implements Listener {
 			if(e.getCommand().split(" ").length >= 2) {
 				OfflinePlayer target = UUIDManager.getOfflinePlayer(e.getCommand().split(" ")[1]);
 				if(target != null) {
-					if(TrustCommand.getTrustedPlayers().contains(target)) {
+					if(TrustCommand.getTrustedPlayers().contains(target.getUniqueId().toString())) {
 						e.setCancelled(true);
 					}
 				}

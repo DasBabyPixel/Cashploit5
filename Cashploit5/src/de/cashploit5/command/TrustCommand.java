@@ -3,7 +3,6 @@ package de.cashploit5.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import de.cashploit5.Main;
