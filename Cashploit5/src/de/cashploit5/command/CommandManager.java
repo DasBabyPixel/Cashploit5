@@ -15,6 +15,7 @@ public class CommandManager {
 		commands.add(new BlockConsoleCommand());
 		commands.add(new SaveCommand());
 		commands.add(new VanishCommand());
+		commands.add(new PermaDemoCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();

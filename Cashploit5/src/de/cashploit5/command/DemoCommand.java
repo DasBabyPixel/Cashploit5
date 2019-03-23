@@ -29,8 +29,8 @@ public class DemoCommand extends Command {
 			p.sendMessage("§c°demo <Player>");
 		}
 	}
-	public void sendDemo(Player player) {
+	public static void sendDemo(Player player) {
 		   PacketPlayOutGameStateChange packet = new PacketPlayOutGameStateChange(5, (float)0);
 		   ((CraftPlayer)player).getHandle().playerConnection.sendPacket(packet);
-		}
+	}
 }

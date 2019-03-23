@@ -22,7 +22,6 @@ public class Cashploit extends Main {
 		setCommandManager(new CommandManager());
 		
 		registerTabCompleters();
-		
 	}
 	
 	public static Cashploit getPlugin() {
