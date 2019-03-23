@@ -19,7 +19,7 @@ public class DemoCommand extends Command {
 			if(target!=null) {
 				sendDemo(target);
 				
-				
+	
 				
 				p.sendMessage("§aDemo Screen wurde gesendet!");
 			}else {
