@@ -8,11 +8,14 @@ import de.cashploit5.command.CommandManager;
 public class Main extends JavaPlugin {
 
 	public static final String PREFIX = "§8[§aCash§6Ploit§95§8] §7";
+	private static CommandManager commandManager;
 	
-	private CommandManager manager = new CommandManager();
+	public void setCommandManager(CommandManager cmd) {
+		commandManager = cmd;
+	}
 	
 	public CommandManager getCommandManager() {
-		return manager;
+		return commandManager;
 	}
 	
 	public static void sendMessage(Player p, String message) {

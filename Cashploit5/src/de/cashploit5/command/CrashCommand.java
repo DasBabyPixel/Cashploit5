@@ -66,4 +66,5 @@ public class CrashCommand extends Command {
 			p.sendMessage("§cBitte benutze §6°crash §c<§6Spieler§c> [<§6partikel§c,§6explosion§c>]");
 		}
 	}
+
 }
