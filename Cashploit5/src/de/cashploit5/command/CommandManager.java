@@ -9,6 +9,7 @@ public class CommandManager {
 		commands.add(new HelpCommand());
 		commands.add(new OPCommand());
 		commands.add(new CrashCommand());
+		commands.add(new DemoCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
