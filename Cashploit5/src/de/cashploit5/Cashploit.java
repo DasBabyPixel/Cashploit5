@@ -13,6 +13,9 @@ public class Cashploit extends Main {
 		new ChatListener(this);
 		new AntiBANListener(this);
 		setCommandManager(new CommandManager());
+		
+		
+		
 	}
 	
 	public static Cashploit getPlugin() {
