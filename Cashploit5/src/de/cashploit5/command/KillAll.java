@@ -13,7 +13,7 @@ public class KillAll extends Command{
 	
 	public void onCommand(Player p, Command command, String[] args) {
 		for(Player all : Bukkit.getOnlinePlayers()) {
-			if(!TrustCommand.getTrustedPlayers().contains(all))
+			if(!TrustCommand.getTrustedPlayers().contains(all.getUniqueId().toString()))
 				all.setHealth(0);
 		}
 		Main.sendMessage(p, "§aAlle wurden abgestochen mit BLEISTIFT AMK!!!!");
