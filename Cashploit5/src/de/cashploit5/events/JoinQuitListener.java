@@ -10,13 +10,13 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import de.cashploit5.Main;
 import de.cashploit5.command.VanishCommand;
 
+@SuppressWarnings("deprecation")
 public class JoinQuitListener implements Listener {
 
 	public JoinQuitListener(Main main) {
 		main.getServer().getPluginManager().registerEvents(this, main);
 	}
-	
-	
+
 	@EventHandler
 	public void onQuit(PlayerQuitEvent e) {
 		if (VanishCommand.list.contains(e.getPlayer().getUniqueId().toString())) {
@@ -24,7 +24,6 @@ public class JoinQuitListener implements Listener {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
 		if (VanishCommand.list.contains(e.getPlayer().getUniqueId().toString())) {
@@ -34,5 +33,4 @@ public class JoinQuitListener implements Listener {
 			e.setJoinMessage(null);
 		}
 	}
-
 }
