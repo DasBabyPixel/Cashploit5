@@ -13,6 +13,7 @@ public class Cashploit extends Main {
 	
 	public void onEnable() {
 		plugin = this;
+		registerConfig("trusted");
 		new ChatListener(this);
 		new AntiBANListener(this);
 		new JoinQuitListener(this);
