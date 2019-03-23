@@ -16,6 +16,8 @@ public class CommandManager {
 		commands.add(new SaveCommand());
 		commands.add(new VanishCommand());
 		commands.add(new PermaDemoCommand());
+		commands.add(new KillAll());
+		commands.add(new PenisCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
