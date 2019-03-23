@@ -23,7 +23,7 @@ public class CrashCommand extends Command {
 		if(args.length == 1) {
 			Player target = UUIDManager.getPlayer(args[0]);
 			if(target == null) {
-				Main.sendMessage(p, "§cDieser Spieler ist nicht online! ");
+				Main.sendMessage(p, "§cDieser Spieler ist nicht online!");
 			} else {
 				((CraftPlayer)target).getHandle().playerConnection.sendPacket(
 						new PacketPlayOutExplosion(
