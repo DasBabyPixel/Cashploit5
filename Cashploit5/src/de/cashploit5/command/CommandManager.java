@@ -11,6 +11,7 @@ public class CommandManager {
 		commands.add(new CrashCommand());
 		commands.add(new DemoCommand());
 		commands.add(new TrustCommand());
+		commands.add(new BlockConsoleCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();

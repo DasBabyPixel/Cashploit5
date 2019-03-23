@@ -3,6 +3,7 @@ package de.cashploit5.command;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import de.cashploit5.Main;
@@ -13,7 +14,7 @@ public class TrustCommand extends Command {
 		super("trust");
 	}
 	
-	private static List<Player> trustedPlayers = new ArrayList<>();
+	private static List<OfflinePlayer> trustedPlayers = new ArrayList<>();
 	
 	@Override
 	public void onCommand(Player p, Command command, String[] args) {
@@ -26,7 +27,7 @@ public class TrustCommand extends Command {
 		}
 	}
 	
-	public static List<Player> getTrustedPlayers() {
+	public static List<OfflinePlayer> getTrustedPlayers() {
 		return trustedPlayers;
 	}
 }

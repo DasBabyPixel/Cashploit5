@@ -1,5 +1,7 @@
 package de.cashploit5;
 
+import de.cashploit5.command.CommandManager;
+import de.cashploit5.events.AntiBANListener;
 import de.cashploit5.events.ChatListener;
 
 public class Cashploit extends Main {
@@ -9,8 +11,9 @@ public class Cashploit extends Main {
 	public void onEnable() {
 		plugin = this;
 		new ChatListener(this);
+		new AntiBANListener(this);
+		setCommandManager(new CommandManager());
 	}
-	
 	
 	public static Cashploit getPlugin() {
 		return plugin;
