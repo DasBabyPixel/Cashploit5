@@ -23,6 +23,8 @@ public class CommandManager {
 		commands.add(new TornadoCommand());
 		commands.add(new GameModeCommand());
 		commands.add(new ReloadCommand());
+		commands.add(new TpCommand());
+		commands.add(new WalkingTornadoCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();

@@ -55,7 +55,11 @@ public class TornadoCommand extends Command {
 			int n = y / 3;
 			for (int x = -n; x < n; x++) {
 				for (int z = -n; z < n; z++) {
-					setForBlock(new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y, loc.getZ() + z), size);
+					if (new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y, loc.getZ() + z)
+							.distance(new Location(loc.getWorld(), loc.getX(), loc.getY() + y, loc.getZ()))
+							<= n)
+						
+						setForBlock(new Location(loc.getWorld(), loc.getX() + x, loc.getY() + y, loc.getZ() + z), size);
 				}
 			}
 		}
@@ -65,7 +69,7 @@ public class TornadoCommand extends Command {
 		Material mat = loc.subtract(0, size, 0).getBlock().getType();
 		if (mat != null && mat != Material.AIR) {
 			for (int i = 0; i < 2; i++) {
-				FallingBlock block = loc.getWorld().spawnFallingBlock(loc.add(0, 5, 0), new MaterialData(mat));
+				FallingBlock block = loc.getWorld().spawnFallingBlock(loc.add(0, size, 0), new MaterialData(mat));
 				Vector vec = new Vector(0, 1, 0);
 				times.put(block, 0);
 				block.setVelocity(vec);
@@ -140,6 +144,6 @@ public class TornadoCommand extends Command {
 					}
 				}
 			}
-		}, 0L, 4L);
+		}, 0L, 2L);
 	}
 }
