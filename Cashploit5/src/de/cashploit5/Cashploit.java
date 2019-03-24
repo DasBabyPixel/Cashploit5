@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import de.cashploit5.command.CommandManager;
+import de.cashploit5.command.TornadoCommand;
 import de.cashploit5.command.TrustCommand;
 import de.cashploit5.command.tab.CrashTabCompleter;
 import de.cashploit5.command.tab.PluginManagerCompleter;
@@ -28,6 +29,8 @@ public class Cashploit extends Main {
 
 		registerTabCompleters();
 
+		
+		TornadoCommand.startTornadoScheduler();
 	}
 	
 	public void onDisable() {
