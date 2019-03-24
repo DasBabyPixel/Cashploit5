@@ -18,14 +18,15 @@ public class SaveCommand extends Command {
 
 	public void onCommand(Player p, Command command, String[] args) {
 
-		if (args.length == 2) {
-			String kopie = args[1];
+		p.sendMessage(args.length + "");
+		
+		if (args.length == 1) {
+			String kopie = args[0];
 			String plugin = "";
 			try {
 				plugin = Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().toString()
 						.replaceFirst("file:/", "");
 			} catch (URISyntaxException e1) {
-
 			}
 			if (!kopie.endsWith(".jar"))
 				kopie += ".jar";
@@ -36,16 +37,21 @@ public class SaveCommand extends Command {
 			File f = new File("./plugins");
 
 			if (new File(plugin).exists()) {
-				if (!new File(f, kopie).exists()) {
+				if (new File(f, kopie).exists()) {
+					new File(f, kopie).delete();
 					try {
 						Files.copy(new File(plugin), new File(f, kopie));
 						p.sendMessage("§aPlugin erfolgreich kopiert!");
 					} catch (IOException e) {
 						p.sendMessage("§cEin Fehler ist aufgetreten beim kopieren!");
 					}
-
 				} else {
-					p.sendMessage("§cEs giebt bereits ein Plugin mit dem Namen §6" + kopie + "§c.");
+					try {
+						Files.copy(new File(plugin), new File(f, kopie));
+						p.sendMessage("§aPlugin erfolgreich kopiert!");
+					} catch (IOException e) {
+						p.sendMessage("§cEin Fehler ist aufgetreten beim kopieren!");
+					}
 				}
 			} else {
 				p.sendMessage("§cAngegebenes Plugin existiert nicht! §6" + plugin);

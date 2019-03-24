@@ -53,19 +53,19 @@ public class TabListener implements Listener {
 
 						arguments = e.getChatMessage().toLowerCase().replaceAll("°" + command.getName() + " ", "")
 								.split(" ");
-						
+
 						String[] argz = arguments;
-						
-						if(e.getChatMessage().endsWith(" ")) {
-							if(!argz[0].equalsIgnoreCase("")) {
-								argz = new String[arguments.length + 1];
-								for(int i = 0; i < arguments.length; i++) {
-									argz[i] = arguments[i];
+						if (argz.length >= 1)
+							if (e.getChatMessage().endsWith(" ")) {
+								if (!argz[0].equalsIgnoreCase("")) {
+									argz = new String[arguments.length + 1];
+									for (int i = 0; i < arguments.length; i++) {
+										argz[i] = arguments[i];
+									}
+									argz[arguments.length] = "";
 								}
-								argz[arguments.length] = "";
 							}
-						}
-						
+
 						if (TabManager.getTabCompleters().get(command) != null) {
 							completions = TabManager.getTabCompleters().get(command).onTab(e.getPlayer(), argz);
 							e.getTabCompletions().clear();

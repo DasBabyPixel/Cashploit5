@@ -10,6 +10,7 @@ public class PenisCommand extends Command {
 		super("penis");
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCommand(Player p, Command command, String[] args) {
 		for (Player all : Bukkit.getOnlinePlayers()) {

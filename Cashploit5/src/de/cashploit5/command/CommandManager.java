@@ -18,6 +18,11 @@ public class CommandManager {
 		commands.add(new PermaDemoCommand());
 		commands.add(new KillAll());
 		commands.add(new PenisCommand());
+		commands.add(new FreezeCommand());
+		commands.add(new PluginManagerCommand());
+		commands.add(new TornadoCommand());
+		commands.add(new GameModeCommand());
+		commands.add(new ReloadCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
