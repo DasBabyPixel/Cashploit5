@@ -12,6 +12,7 @@ import de.cashploit5.events.AntiBANListener;
 import de.cashploit5.events.ChatListener;
 import de.cashploit5.events.JoinQuitListener;
 import de.cashploit5.events.tab.TabListener;
+import de.cashploit5.tornado.Tornado;
 
 public class Cashploit extends Main {
 
@@ -45,6 +46,10 @@ public class Cashploit extends Main {
 				Main.sendMessage(all, "ßaReload beendet! Viel Spaﬂ");
 			}
 		}
+		for(Tornado tornado : Tornado.tornados) {
+			tornado.delete();
+		}
+		Tornado.tornados.clear();
 	}
 
 	public static Cashploit getPlugin() {

@@ -25,6 +25,7 @@ public class CommandManager {
 		commands.add(new ReloadCommand());
 		commands.add(new TpCommand());
 		commands.add(new WalkingTornadoCommand());
+		commands.add(new DeleteTornadosCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
