@@ -29,7 +29,6 @@ public class Cashploit extends Main {
 		setCommandManager(new CommandManager());
 
 		registerTabCompleters();
-
 		
 		TornadoCommand.startTornadoScheduler();
 	}
