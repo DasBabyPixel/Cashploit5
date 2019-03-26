@@ -25,7 +25,7 @@ public class PermaDemoCommand extends Command {
 			if (target == null) {
 				Main.sendMessage(p, "§cDieser Spieler ist nicht online!");
 			} else {
-				if (isRunning.get(p) == null || !isRunning.get(target)) {
+				if (isRunning.get(target) == null || !isRunning.get(target)) {
 					int sched = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 
 						@Override
