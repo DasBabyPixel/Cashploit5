@@ -1,8 +1,9 @@
-package de.cashploit5;
+package de.main;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import de.cashploit5.Main;
 import de.cashploit5.command.CommandManager;
 import de.cashploit5.command.TornadoCommand;
 import de.cashploit5.command.TrustCommand;

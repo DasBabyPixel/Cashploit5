@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.cashploit5.command.Command;
 import de.cashploit5.command.CommandManager;
+import de.main.MainClass;
 
 public class Main extends JavaPlugin {
 
