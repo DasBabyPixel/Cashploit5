@@ -61,6 +61,6 @@ public class Main extends JavaPlugin {
 	}
 	
 	public static Main getPlugin() {
-		return Cashploit.getPlugin();
+		return MainClass.getPlugin();
 	}
 }

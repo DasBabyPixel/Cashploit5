@@ -14,9 +14,9 @@ import de.cashploit5.events.JoinQuitListener;
 import de.cashploit5.events.tab.TabListener;
 import de.cashploit5.tornado.Tornado;
 
-public class Cashploit extends Main {
+public class MainClass extends Main {
 
-	private static Cashploit plugin;
+	private static MainClass plugin;
 
 	public void onEnable() {
 		plugin = this;
@@ -51,7 +51,7 @@ public class Cashploit extends Main {
 		Tornado.tornados.clear();
 	}
 
-	public static Cashploit getPlugin() {
+	public static MainClass getPlugin() {
 		return plugin;
 	}
 
