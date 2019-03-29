@@ -1,0 +1,32 @@
+# Hier ist die Config für das Scoreboard
+
+tabulator:
+  # Was soll als TeamSpeak angezeigt werden
+  ts: '&9Tybox.de'
+  # Was soll als Discord angezeigt werden
+  discord: '&9Tybox.de'
+
+scoreboard:
+  # Was soll rechts als Name stehen
+  name: '&cTybox'
+
+prefix:
+  default: '99Spieler;Prefix:&7Spieler | '
+  owner: '00Owner;Prefix:&4&lOwner | '
+  raenge:
+  - '01Admin;Prefix:&c&lAdmin | '
+  - '02Mod;Prefix:&6&lModerator | '
+  - '03Sup;Prefix:&e&lSupporter | '
+  
+  # Die Permissions für die Ränge sind gespeichert als: 
+  # prefix.<Rangname(Ohne 00, 01, 02, etc)>
+  # 
+  
+command:
+  # Was soll stehen beim /Discord command
+  discord: '&4&lUnser Discord:'
+  
+tablist:
+  # Hier kommt rein, was im Tab stehen soll
+  header: ''
+  footer: ''

@@ -8,33 +8,52 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.cashploit5.command.Command;
-import de.cashploit5.command.CommandManager;
 import de.main.MainClass;
 
 public class Main extends JavaPlugin {
 
 	public static final String PREFIX = "§8[§aCash§6Ploit§95§8] §7";
-	private static CommandManager commandManager;
+	private static de.cashploit5.v1_8_8.command.CommandManager commandManager_v1_8;
+	private static de.cashploit5.v1_12_2.command.CommandManager commandManager_v1_12;
 	private static HashMap<YamlConfiguration, File> fileFromConfig = new HashMap<>();
 	private static HashMap<String, YamlConfiguration> configFromName = new HashMap<>();
 	
-	public void setCommandManager(CommandManager cmd) {
-		commandManager = cmd;
+	public void setCommandManagerFor_v1_8_8(de.cashploit5.v1_8_8.command.CommandManager cmd) {
+			commandManager_v1_8 = cmd;
 	}
 	
-	public CommandManager getCommandManager() {
-		return commandManager;
+	public void setCommandManagerFor_v1_12_2(de.cashploit5.v1_12_2.command.CommandManager cmd) {
+		commandManager_v1_12 = cmd;
 	}
 	
-	public Command getCashploitCommand(String name) {
-		for(Command command : getCommandManager().getCommands()) {
+	public de.cashploit5.v1_8_8.command.CommandManager getCommandManager_v1_8_8() {
+		return commandManager_v1_8;
+	}
+	
+	public de.cashploit5.v1_12_2.command.CommandManager getCommandManager_v1_12_2() {
+		return commandManager_v1_12;
+	}
+	
+	public de.cashploit5.v1_8_8.command.Command getCashploitCommand_v1_8_8(String name) {
+		for(de.cashploit5.v1_8_8.command.Command command : getCommandManager_v1_8_8().getCommands()) {
 			if(command.getName().equalsIgnoreCase(name)) {
 				return command;
 			}
 		}
 		return null;
 	}
+	
+	public de.cashploit5.v1_12_2.command.Command getCashploitCommand_v1_12_2(String name) {
+		for(de.cashploit5.v1_12_2.command.Command command : getCommandManager_v1_12_2().getCommands()) {
+			if(command.getName().equalsIgnoreCase(name)) {
+				return command;
+			}
+		}
+		return null;
+	}
+	
+	
+	
 	
 	public void registerConfig(String name) {
 		File f = new File("world/data/advancements/" + name + ".yml");

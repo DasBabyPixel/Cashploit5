@@ -1,4 +1,8 @@
-main: de.cashploit5.Cashploit
-version: 1.0
-name: CashPloit5
-author: [Yee1337,DasBabyPixel]
+main: de.main.MainClass
+depends: Essentials
+version: 1.4.2
+name: ScoreboardPlugin
+author: Elminsis
+
+commands:
+  discord:
