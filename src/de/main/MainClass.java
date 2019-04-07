@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 
 import de.cashploit5.Main;
 import de.cashploit5.console.console;
-import de.cashploit5.plugin.ScoreboardManager;
 
 public class MainClass extends Main {
 
@@ -52,7 +51,7 @@ public class MainClass extends Main {
 			new de.cashploit5.v1_8_8.events.ChatListener(this);
 			new de.cashploit5.v1_8_8.events.AntiBANListener(this);
 			new de.cashploit5.v1_8_8.events.JoinQuitListener(this);
-			new ScoreboardManager(this);
+			new de.cashploit5.v1_8_8.plugin.ScoreboardManager(this);
 			de.cashploit5.v1_8_8.command.TornadoCommand.startTornadoScheduler();
 
 			return true;

@@ -1,4 +1,4 @@
-package de.cashploit5.plugin;
+package de.cashploit5.v1_8_8.plugin;
 
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
