@@ -24,8 +24,11 @@ public class MainClass extends Main {
 		registerTabCompleters();
 
 	}
-
-	private String getVersion() {
+	
+	/**
+	 * @return Die aktuelle Version des Minecraft Servers
+	 */
+	public String getVersion() {
 		String version = null;
 		try {
 			version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
@@ -34,9 +37,13 @@ public class MainClass extends Main {
 			return null;
 		}
 	}
-
+	
+	
+	/**
+	 * Das ViaVersionale Plugin laden
+	 * @return Ob die Version geladen werden konnte
+	 */
 	private boolean loadForVersion() {
-
 		String version = "";
 		try {
 			version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];

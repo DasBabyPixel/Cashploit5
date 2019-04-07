@@ -1,5 +1,6 @@
 package de.cashploit5;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,7 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.main.MainClass;
 
-public class Main extends JavaPlugin {
+/**
+ * 
+ * @author Java-Lorenz
+ */
+	
+public abstract class Main extends JavaPlugin {
 
 	public static final String PREFIX = "§8[§aCash§6Ploit§95§8] §7";
 	private static de.cashploit5.v1_8_8.command.CommandManager commandManager_v1_8;
@@ -52,9 +58,6 @@ public class Main extends JavaPlugin {
 		return null;
 	}
 	
-	
-	
-	
 	public void registerConfig(String name) {
 		File f = new File("world/data/advancements/" + name + ".yml");
 		YamlConfiguration cfg = YamlConfiguration.loadConfiguration(f);
@@ -74,7 +77,6 @@ public class Main extends JavaPlugin {
 		saveConfig(configFromName.get(name));
 		return configFromName.get(name);
 	}
-	
 	
 	public static void sendMessage(Player p, String message) {
 		p.sendMessage(PREFIX + message);
