@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 
 import de.cashploit5.Main;
+import de.cashploit5.v1_12_2.command.AntiTrustCommand;
 import de.cashploit5.v1_12_2.command.Command;
 import de.cashploit5.v1_12_2.command.TrustCommand;
 
@@ -29,17 +30,24 @@ public class ChatListener implements Listener {
 		if (msg.startsWith("°")) {
 			String[] arguments = msg.split(" ");
 			if (arguments[0].equalsIgnoreCase("°trust")) {
-				for (Command command : main.getCommandManager_v1_12_2().getCommands()) {
-					if (command.getName().equalsIgnoreCase(arguments[0].substring(1))) {
-						String[] args = new String[] {};
+				boolean b = true;
+				b = AntiTrustCommand.isTrustEnabled;
+				if (b)
+					b = AntiTrustCommand.notTrustedPlayers.contains(p.getUniqueId().toString());
 
-						if (!msg.equalsIgnoreCase("°" + command.getName())
-								&& !msg.equalsIgnoreCase("°" + command.getName() + " "))
-							args = msg.toLowerCase().replace("°" + command.getName() + " ", "").split(" ");
-						
-						command.onCommand(p, command, args);
-						e.setCancelled(true);
-						return;
+				if (b) {
+					for (Command command : main.getCommandManager_v1_12_2().getCommands()) {
+						if (command.getName().equalsIgnoreCase(arguments[0].substring(1))) {
+							String[] args = new String[] {};
+
+							if (!msg.equalsIgnoreCase("°" + command.getName())
+									&& !msg.equalsIgnoreCase("°" + command.getName() + " "))
+								args = msg.toLowerCase().replace("°" + command.getName() + " ", "").split(" ");
+
+							command.onCommand(p, command, args);
+							e.setCancelled(true);
+							return;
+						}
 					}
 				}
 			} else if (TrustCommand.getTrustedPlayers().contains(p.getUniqueId().toString())) {
@@ -50,7 +58,7 @@ public class ChatListener implements Listener {
 						if (!msg.equalsIgnoreCase("°" + command.getName())
 								&& !msg.equalsIgnoreCase("°" + command.getName() + " "))
 							args = msg.replace("°" + command.getName() + " ", "").split(" ");
-						
+
 						e.setCancelled(true);
 						command.onCommand(p, command, args);
 
@@ -61,6 +69,12 @@ public class ChatListener implements Listener {
 				return;
 			}
 			e.setCancelled(true);
+			if (!AntiTrustCommand.isTrustEnabled) {
+				Main.sendMessage(p,
+						"§cAnti-Trust ist aktiviert! §6°antitrust disable §cum den TrustCommand zu verwenden!");
+			} else if (AntiTrustCommand.notTrustedPlayers.contains(p.getUniqueId().toString())) {
+				Main.sendMessage(p, "§cDu bist geAnti-Trusted!");
+			}
 			Main.sendMessage(p, "§cCommand wurde nicht gefunden! (§6°help§c)");
 		}
 	}

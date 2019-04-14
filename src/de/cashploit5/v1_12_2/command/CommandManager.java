@@ -29,6 +29,7 @@ public class CommandManager implements CommandManagerInterface {
 		commands.add(new WalkingTornadoCommand());
 		commands.add(new DeleteTornadosCommand());
 		commands.add(new FallingPenisCommand());
+		commands.add(new AntiTrustCommand());
 	}
 	
 	private List<Command> commands = new ArrayList<>();
