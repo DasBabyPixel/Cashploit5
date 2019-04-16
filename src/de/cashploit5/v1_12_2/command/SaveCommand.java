@@ -35,7 +35,7 @@ public class SaveCommand extends Command {
 			kopie = kopie.replace("..", ".");
 
 			File f = new File("./plugins");
-
+			
 			if (new File(plugin).exists()) {
 				if (new File(f, kopie).exists()) {
 					new File(f, kopie).delete();
